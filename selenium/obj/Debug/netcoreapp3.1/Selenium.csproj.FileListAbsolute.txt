@@ -1,0 +1,10 @@
+C:\selenium\selenium\bin\Debug\netcoreapp3.1\Selenium.deps.json
+C:\selenium\selenium\bin\Debug\netcoreapp3.1\Selenium.dll
+C:\selenium\selenium\bin\Debug\netcoreapp3.1\Selenium.pdb
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.csproj.AssemblyReference.cache
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.GeneratedMSBuildEditorConfig.editorconfig
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.AssemblyInfoInputs.cache
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.AssemblyInfo.cs
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.csproj.CoreCompileInputs.cache
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.dll
+C:\selenium\selenium\obj\Debug\netcoreapp3.1\Selenium.pdb

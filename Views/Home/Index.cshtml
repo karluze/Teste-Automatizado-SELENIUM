@@ -1,0 +1,87 @@
+﻿@model ImcViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Olá, Seja Bem vindo</h1>
+    <h5>Conheça outros cursos da <b>MFRinfo</b></h5>
+    <p>Curso de <a href="https://www.udemy.com/course/aspnet-core-22-c-api-com-arquitetura-ddd-na-pratica/?referralCode=B12C8B1904B8F5ECBB16"> ASP.NET Core -C# API com Arquitetura DDD na Prática</a>.</p>
+</div>
+<div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <form method="post">
+        <h2 class="form-signin-heading">Calculadora de IMC</h2>
+            <div class="form-group">
+                <label>Digite seu Peso</label>
+                <input asp-for="Peso" type="text" class="form-control" placeholder="Peso" name="Peso" id="id_Peso"/>
+                <span asp-validation-for="Peso"></span>
+            </div>
+            <div class="form-group">
+                <label>Digite sua altura</label>
+                <input asp-for="Altura" type="text" class="form-control" placeholder="Altura" name="Altura" id="id_Altura">
+                <span asp-validation-for="Altura"></span>
+            </div>   
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnCalcular" id="id_btnCalcular" >Calcular</button>
+
+            @if (Model != null && Model.ResultImc.HasValue)
+            {
+                <div class="form-group" style="padding-bottom: 20px;">
+                    <label class="control-label col-md-2">Valor do IMC:</label>
+                    <div class="col-md-10">
+                        <label id="ResultImc" class="control-label col-md-2" style="text-align: left;"> <b>@Model.ResultImc.Value.ToString("0.00")</b></label>
+                    </div>
+                    @if(Model.ResultImc < 17) 
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Muito abaixo do peso
+                        </div>                    
+                    }          
+                    @if ((Model.ResultImc > 17) && (Model.ResultImc < 18.49))
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            Abaixo do peso
+                        </div>                    
+                    }   
+                    @if ((Model.ResultImc > 18.5) && (Model.ResultImc < 24.99))
+                    {
+                        <div class="alert alert-primary" role="alert">
+                            Peso Normal
+                        </div>                    
+                    }                  
+
+                    @if ((Model.ResultImc > 25) && (Model.ResultImc < 29.99))
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            Acima do Peso
+                        </div>                    
+                    }   
+
+                    @if ((Model.ResultImc > 30) && (Model.ResultImc < 34.99))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Obesidade I
+                        </div>                    
+                    }        
+
+                    @if ((Model.ResultImc > 35) && (Model.ResultImc < 39.99))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Obesidade II(Severa)
+                        </div>                    
+                    }                     
+                    
+                    @if (Model.ResultImc > 40) 
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Obesidade III(Mórbida)
+                        </div>                    
+                    }                    
+                </div>         
+            }
+    </form>    
+  </div>
+</div>
